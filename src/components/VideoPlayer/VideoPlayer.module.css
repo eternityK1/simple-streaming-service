@@ -1,0 +1,113 @@
+.player {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px 2px #120808;
+}
+
+.video_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video_container.fullscreen::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.video_view {
+    height: 500px;
+    width: 890px;
+    background: black;
+}
+
+.video_view_fullscreen {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+}
+
+.main_controls {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2147483647;
+}
+
+.button_main_controls {
+    height: 88px;
+    width: 88px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 2147483647;
+}
+
+.main_controls:hover .button_main_controls {
+    opacity: 0.8;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.hiden {
+    display: none;
+}
+
+.submain_controls {
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity ease-out 0.5s;
+    padding: 10px;
+}
+
+.canvasFrame {
+    display: none;
+}
+
+.submain_controls_button {
+    background: #9ca9a914;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.video_view:hover ~ .submain_controls {
+    opacity: 1;
+}
+
+.submain_controls:hover {
+    opacity: 1;
+}
+
+.right {
+    display: inline-block;
+    float: left;
+}
+
+.left {
+    display: inline-block;
+    float: right;
+}
